@@ -1,0 +1,108 @@
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+ 
+<!--<view hidden="{{currentTab!==0}}">
+  <scroll-view class='page-body' scroll-y="true">
+    <navigator url='../recommend_movie/recommend_movie?id={{index}}&name=推荐' wx:for="{{movies}}">
+      <view class='item'>
+        <image class='poster' src='{{item.cover}}'></image>
+        <view class='mata'>
+          <text class='title'>{{item.name}}</text>
+          <text class='sub-title'>更新时间：{{item.publishTime}}</text>
+          <text class='type'>{{item.type}}</text>
+        </view>
+      </view>
+    </navigator>
+</scroll-view>
+</view>
+-->
+<view hidden="{{currentTab!==0}}">
+ <scroll-view class='page-body' scroll-y="true">
+      <view wx:for="{{movies}}">
+        <navigator class='item'  url='../movie/movie?name={{item.name}}' >
+          <image class='poster' src='{{item.cover}}'></image>
+          <view class='mata'>
+          <text class='title'>{{item.name}}</text>
+          <text class='sub-title'>更新时间：{{item.publishTime}}</text>
+          <text class='type'>{{item.type}}</text>
+          </view>
+        </navigator>
+      </view>
+</scroll-view>
+</view>
+
+<view hidden="{{currentTab!==1}}">
+  <scroll-view class='page-body' scroll-y="true">
+      <view wx:for="{{movies}}">
+        <navigator class='item'  url='../movie/movie?name={{item.name}}' >
+          <image class='poster' src='{{item.cover}}'></image>
+          <view class='mata'>
+          <text class='title'>{{item.name}}</text>
+          <text class='sub-title'>更新时间：{{item.publishTime}}</text>
+          <text class='type'>{{item.type}}</text>
+          </view>
+        </navigator>
+      </view>
+</scroll-view>
+</view>
+ 
+<view hidden="{{currentTab!==2}}">
+  <scroll-view class='page-body' scroll-y="true">
+      <view wx:for="{{movies}}">
+        <navigator class='item'  url='../movie/movie?name={{item.name}}' >
+          <image class='poster' src='{{item.cover}}'></image>
+          <view class='mata'>
+          <text class='title'>{{item.name}}</text>
+          <text class='sub-title'>更新时间：{{item.publishTime}}</text>
+          <text class='type'>{{item.type}}</text>
+          </view>
+        </navigator>
+      </view>
+</scroll-view>
+</view>
+
+<view hidden="{{currentTab!==3}}">
+  <scroll-view class='page-body' scroll-y="true">
+      <view wx:for="{{movies}}">
+        <navigator class='item'  url='../movie/movie?name={{item.name}}' >
+          <image class='poster' src='{{item.cover}}'></image>
+          <view class='mata'>
+          <text class='title'>{{item.name}}</text>
+          <text class='sub-title'>更新时间：{{item.publishTime}}</text>
+          <text class='type'>{{item.type}}</text>
+          </view>
+        </navigator>
+      </view>
+</scroll-view>
+</view>
+
+<view hidden="{{currentTab!==4}}">
+  <scroll-view class='page-body' scroll-y="true">
+      <view wx:for="{{movies}}">
+        <navigator class='item'  url='../movie/movie?name={{item.name}}' >
+          <image class='poster' src='{{item.cover}}'></image>
+          <view class='mata'>
+          <text class='title'>{{item.name}}</text>
+          <text class='sub-title'>更新时间：{{item.publishTime}}</text>
+          <text class='type'>{{item.type}}</text>
+          </view>
+        </navigator>
+      </view>
+</scroll-view>
+</view>
+
+<view hidden="{{currentTab!==5}}">
+  <scroll-view class='page-body' scroll-y="true">
+      <view wx:for="{{movies}}">
+        <navigator class='item'  url='../movie/movie?name={{item.name}}' >
+          <image class='poster' src='{{item.cover}}'></image>
+          <view class='mata'>
+          <text class='title'>{{item.name}}</text>
+          <text class='sub-title'>更新时间：{{item.publishTime}}</text>
+          <text class='type'>{{item.type}}</text>
+          </view>
+        </navigator>
+      </view>
+</scroll-view>
+</view>

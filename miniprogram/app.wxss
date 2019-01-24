@@ -1,0 +1,79 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+page{
+  background-color: #fff;
+  display: flex;
+  font-family: "Microsoft YaHei";
+  /*纵向排列*/
+  flex-direction: column;
+}
+
+.page-header{
+  display: flex;
+  /*横向居中对齐*/
+  justify-content: center;
+  border-bottom: 2rpx solid #ccc;
+  margin-bottom: 10rpx;
+}
+
+.page-header-text{
+  padding: 20rpx 40rpx;
+  color: #999;
+  font-size: 40rpx;
+}
+
+.page-body{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.item{
+  display: flex;
+  padding: 20rpx 40rpx;
+  border-bottom: 2rpx solid #eee;
+}
+
+.item .poster{
+  width: 228rpx;
+  height: 350rpx;
+  margin-right: 20rpx;
+}
+
+.item .mata{
+  flex: 1;
+}
+
+.item .title,.item .sub-title{
+  display: block;
+  
+}
+
+.item .title{
+  font-size: 38rpx;
+}
+
+.item .sub-title{
+  margin-top: 50rpx;
+  font-size: 29rpx;
+  color: #c0c0c0;
+}
+
+.item .type{
+  margin-top: 20rpx;
+}
+
+.item .rating{
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 0rpx;
+}

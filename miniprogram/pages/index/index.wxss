@@ -1,0 +1,14 @@
+/**index.wxss**/
+
+
+.next{
+  width: 300rpx;
+  float: left;
+  margin-left: 100rpx;
+}
+
+.last{
+  width: 300rpx;
+  float: left;
+  margin-left: 20rpx;
+}

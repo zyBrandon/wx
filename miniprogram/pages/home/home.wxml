@@ -1,0 +1,12 @@
+<open-data type="userAvatarUrl" class="head"></open-data>
+
+<text class='collect_text'>{{name}}的收藏</text>
+<scroll-view class='page-body' scroll-y="true">
+      <view wx:for="{{movies}}">
+        <navigator class='item'  url='../movie/movie?name={{item.movie_name}}' >
+          <view class='mata'>
+          <text class='title'>{{item.movie_name}}</text>
+          </view>
+        </navigator>
+      </view>
+</scroll-view>

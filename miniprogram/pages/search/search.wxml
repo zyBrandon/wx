@@ -1,0 +1,31 @@
+<view class="page-header">
+  <input class='page-header-text' placeholder='输入搜索关键词' auto-focus='' bindchange="search"></input>
+</view>
+
+
+<scroll-view scroll-y="true">
+  <view class='mata' wx:for="{{movies}}">
+    <image class='poster' src='{{item.cover}}' background-size="cover"></image>
+    <text class='title'>{{item.name}}</text>
+    <text class='down'>下载地址</text>
+    <view class='resources'>
+      <text selectable='true'>{{item.downResources[0].link}}</text>
+    </view>
+  </view>
+</scroll-view>
+
+<!--<scroll-view class='page-body' scroll-y="true">
+    <navigator url='../movie/movie?id={{index}}' wx:for="{{movies}}">
+      <view class='item'>
+        <image class='poster' src='{{item.cover}}'></image>
+        <view class='mata'>
+          <text class='title'>{{item.name}}</text>
+          <text class='sub-title'>发布时间：{{item.publishTime}}</text>
+        </view>
+        <view>
+          <text class='rating'>{{item.rating.average}}</text>
+        </view>
+      </view>
+    </navigator>
+</scroll-view>
+-->

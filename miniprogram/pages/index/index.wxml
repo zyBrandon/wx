@@ -1,0 +1,12 @@
+<scroll-view class='page-body' scroll-y="true">
+      <view wx:for="{{movies}}">
+        <navigator class='item'  url='../movie/movie?name={{item.name}}' >
+          <image class='poster' src='{{item.cover}}'></image>
+          <view class='mata'>
+          <text class='title'>{{item.name}}</text>
+          <text class='sub-title'>更新时间：{{item.publishTime}}</text>
+          <text class='type'>{{item.type}}</text>
+          </view>
+        </navigator>
+      </view>
+</scroll-view>

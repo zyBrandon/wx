@@ -1,0 +1,20 @@
+<!--pages/movie/movie.wxml-->
+<scroll-view scroll-y="true">
+  <view class='mata' wx:for="{{movies}}">
+    <image class='poster' src='{{item.cover}}' background-size="cover"></image>
+    <text class='title'>{{item.name}}</text>
+    
+    <text class='down'>下载地址</text>
+    <view class='resources'>
+      <text selectable='true'>{{item.downResources[0].link}}</text>
+    </view>
+    <view class='resources'>
+      <text selectable='true'>{{item.downResources[1].link}}</text>
+    </view>
+    <view class='resources'>
+      <text selectable='true'>{{item.downResources[2].link}}</text>
+    </view>
+  </view>
+  <button bindtap='collect'>点我收藏该电影</button>
+</scroll-view>
+

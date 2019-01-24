@@ -1,0 +1,19 @@
+/* pages/home/home.wxss */
+.head{
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 300rpx;
+  margin: auto;
+}
+.nickname{
+  text-align: center;
+}
+button{
+  margin-top: 20rpx;
+}
+
+.collect_text{
+  text-align: center;
+  color: gray;
+  
+}
