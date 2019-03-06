@@ -187,7 +187,7 @@ Page({
               country = res.userInfo.country;
               user_language = res.userInfo/user_language;
               province = res.userInfo.province;
-              wx.request({
+              /*wx.request({
                 url: 'http://localhost:8008/collect/inputUser',
                 data: { "nickname": nickname, "city": city, "gender": gender, "country": country, "user_language": user_language, "province": province },
                 header: {
@@ -196,7 +196,7 @@ Page({
                 success: function (res) {
                   console.log(res)
                 }
-              })
+              })*/
             }
           })
 

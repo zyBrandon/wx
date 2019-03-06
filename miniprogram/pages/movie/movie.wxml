@@ -4,7 +4,7 @@
     <image class='poster' src='{{item.cover}}' background-size="cover"></image>
     <text class='title'>{{item.name}}</text>
     
-    <text class='down'>下载地址</text>
+    <text class='down'>友情播放地址</text>
     <view class='resources'>
       <text selectable='true'>{{item.downResources[0].link}}</text>
     </view>

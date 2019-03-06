@@ -1,4 +1,5 @@
 // pages/home/home.js
+wx.cloud.init()
 var city = ""
 var nickname = ""
 Page({
@@ -45,7 +46,7 @@ Page({
               nickname = res.userInfo.nickName
               city = res.userInfo.city
               console.log(res.userInfo)
-              wx.request({
+              /*wx.request({
                 url: 'http://localhost:8008/collect/selectMovies',
                 data: { "nickname": nickname, "city": city },
                 header: {
@@ -56,6 +57,25 @@ Page({
                     movies: res.data
                   })
                   console.log(res.data)
+                }
+              })*/
+              const db = wx.cloud.database()
+              // 查询当前用户所有的 counters
+              db.collection('movie').where({
+                
+              }).get({
+                success: res => {
+                  this.setData({
+                    movies:res.data
+                  })
+                  console.log('[数据库] [查询记录] 成功: ', res.data)
+                },
+                fail: err => {
+                  wx.showToast({
+                    icon: 'none',
+                    title: '查询记录失败'
+                  })
+                  console.error('[数据库] [查询记录] 失败：', err)
                 }
               })
             }

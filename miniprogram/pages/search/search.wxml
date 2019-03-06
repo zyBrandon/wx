@@ -11,6 +11,12 @@
     <view class='resources'>
       <text selectable='true'>{{item.downResources[0].link}}</text>
     </view>
+    <view class='resources'>
+      <text selectable='true'>{{item.downResources[1].link}}</text>
+    </view>
+    <view class='resources'>
+      <text selectable='true'>{{item.downResources[2].link}}</text>
+    </view>
   </view>
 </scroll-view>
 

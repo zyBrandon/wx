@@ -2,6 +2,8 @@ var util = require('../../utils/util.js')
 
 const API_URL = 'https://movie.house-map.cn/v1/movies/'
 
+wx.cloud.init()
+
 
 var name = "推荐";
 var nickname;
@@ -26,7 +28,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (params) {
+  onLoad: function (params) { 
     console.log("params为"+params.name)
     movie_name = params.name
     var that = this;
@@ -58,7 +60,7 @@ Page({
               country = res.userInfo.country;
               user_language = res.userInfo / user_language;
               province = res.userInfo.province;
-              wx.request({
+              /*wx.request({
                 url: 'http://localhost:8008/collect/inputUser',
                 data: { "nickname": nickname, "city": city, "gender": gender, "country": country, "user_language": user_language, "province": province },
                 header: {
@@ -66,6 +68,33 @@ Page({
                 },
                 success: function (res) {
                   console.log(res)
+                }
+              })*/
+              const db = wx.cloud.database()
+              db.collection('user').add({
+                data: {
+                  nickname: nickname,
+                  city: city,
+                  gender: gender,
+                  country: country,
+                  user_language: user_language,
+                  province: province
+                },
+                success: res => {
+                  // 在返回结果中会包含新创建的记录的 _id
+                  this.setData({
+                  })
+                  wx.showToast({
+                    title: '添加成功',
+                  })
+                  console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+                },
+                fail: err => {
+                  wx.showToast({
+                    icon: 'none',
+                    title: '新增记录失败'
+                  })
+                  console.error('[数据库] [新增记录] 失败：', err)
                 }
               })
             }
@@ -87,7 +116,7 @@ Page({
     var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
     console.log("当前时间：" + Y + M + D);
     var time = Y + M + D
-    wx.request({
+    /*wx.request({
       url: 'http://localhost:8008/collect/inputMovie',
       data: { "nickname": nickname, "city": city,"movie_name":movie_name,"time":time},
       header: {
@@ -95,6 +124,31 @@ Page({
       },
       success: function (res) {
         console.log(res)
+      }
+    })*/
+    const db = wx.cloud.database()
+    db.collection('movie').add({
+      data: {
+        nickname: nickname,
+        city: city,
+        movie_name: movie_name,
+        time: time
+      },
+      success: res => {
+        // 在返回结果中会包含新创建的记录的 _id
+        this.setData({
+        })
+        wx.showToast({
+          title: '添加成功',
+        })
+        console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '新增记录失败'
+        })
+        console.error('[数据库] [新增记录] 失败：', err)
       }
     })
   },
